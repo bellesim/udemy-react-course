@@ -5,7 +5,8 @@ import "./ExpenseItem.css";
 //props holds all attributes of the element
 //props can access each attribute name
 function ExpenseItem(props) {
-  return (
+    return (
+      
     <div className="expense-item">
           <ExpenseDate date={props.date}/>
       <div className="expense-item__description">
