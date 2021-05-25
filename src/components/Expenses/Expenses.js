@@ -7,10 +7,20 @@ import ExpensesFilter from "./ExpensesFilter";
 const Expenses = (props) => {
   //default value = 2020 via selected
   const [filteredYear, setFilteredYear] = useState("2020");
+
+  //change the dropdown filter option
+  //update the filteredYear
   const filterChangeHandler = (selectedYear) => {
     console.log("Expenses.js");
+    console.log(selectedYear);
     setFilteredYear(selectedYear);
   };
+
+  //filter return new array
+  const filteredExpenses = props.items.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   //change the state and event
   return (
     <Card className="expenses">
@@ -18,14 +28,17 @@ const Expenses = (props) => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      {props.items.map((expense) => (
+
+      {filteredExpenses.map((expense) => (
         <ExpenseItem
+          //special prop key
           key={expense.id}
           title={expense.title}
           amount={expense.amount}
           date={expense.date}
         />
       ))}
+
       {/* <ExpenseItem
         title={props.items[0].title}
         amount={props.items[0].amount}

@@ -5,8 +5,10 @@ const ExpensesFilter = (props) => {
   //Event handler
   const filterChangeHandler = (event) => {
     //retrieve chosen value
-    props.onChangeFilter(event.target.value);
+    props.asd(event.target.value);
   };
+
+
   return (
     <div className="expenses-filter">
       <div className="expenses-filter__control">
