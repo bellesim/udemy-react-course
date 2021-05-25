@@ -1,4 +1,5 @@
 import "./ExpenseForm.css";
+import { useState } from 'react';
 
 const ExpenseForm = () => {
   //MULTIPLE STATES
@@ -16,33 +17,10 @@ const ExpenseForm = () => {
     setEnteredDate(event.target.value);
   };
 
-  //ONE STATE
-  const [userInput, setUserInput] = useState({
-    enteredTitle: "",
-    enteredAmount: "",
-    enteredDate: "",
-  });
 
-  const titleChangeHandler = (event) => {
-    setUserInput({
-      //Retrieve the other values that are not updated
-      ...userInput,
-      //Updated value
-      enteredTitle: event.target.value,
-    });
-
-    //Use this when state depends on previous state
-    //Ensure that the state is always the latest
-    setUserInput = (prevState) => {
-      return {
-        ...prevState,
-        enteredTitle: event.target.value,
-      };
-    };
-  };
-
+  const submitHandler = () => {};
   return (
-    <form>
+    <form onClick={submitHandler}>
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
@@ -68,7 +46,7 @@ const ExpenseForm = () => {
         </div>
       </div>
       <div className="new-expense__actions">
-        <button type="submit">Add Expense</button>
+        <button type="submit" class>Add Expense</button>
       </div>
     </form>
   );
