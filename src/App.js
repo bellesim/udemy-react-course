@@ -2,6 +2,7 @@ import logo from "./logo.svg";
 import "./App.css";
 import Expenses from "./components/Expenses/Expenses";
 import NewExpense from "./components/NewExpense/NewExpense";
+import ExpensesFilter from "./components/Expenses/ExpensesFilter";
 
 const App = () => {
   const expenses = [
@@ -32,8 +33,10 @@ const App = () => {
 
   return (
     <div className="App">
+      {/* Data is generated here */}
       <NewExpense onAddExpense={addExpenseHandler} />
       <div className="expenses">
+        {/* Data is needed here */}
         <Expenses items={expenses}></Expenses>
       </div>
     </div>
