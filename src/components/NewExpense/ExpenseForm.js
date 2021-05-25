@@ -1,7 +1,7 @@
 import "./ExpenseForm.css";
 import { useState } from "react";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   //MULTIPLE STATES
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
@@ -50,8 +50,8 @@ const ExpenseForm = () => {
       amount: enteredAmount,
       date: new Date(enteredDate),
     };
-    console.log(expenseData);
-    //Clearing inputs once data is saved 
+    props.onSaveExpenseData(expenseData);
+    //Clearing inputs once data is saved
     setEnteredTitle("");
     setEnteredAmount("");
     setEnteredDate("");
