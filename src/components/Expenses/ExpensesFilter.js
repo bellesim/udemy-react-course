@@ -2,12 +2,10 @@ import { useState } from "react";
 import "./ExpensesFilter.css";
 
 const ExpensesFilter = (props) => {
-  //Event handler
   const filterChangeHandler = (event) => {
-    //retrieve chosen value
-    props.asd(event.target.value);
+    //Retrieve chosen value
+    props.onChangeFilter(event.target.value);
   };
-
 
   return (
     <div className="expenses-filter">
