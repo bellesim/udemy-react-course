@@ -3,7 +3,6 @@ import React from 'react';
 import CourseGoalItem from '../CourseGoalItem/CourseGoalItem';
 import './CourseGoalList.css';
 
-//map each goal from array as CourseGoalItem
 const CourseGoalList = props => {
   return (
     <ul className="goal-list">
